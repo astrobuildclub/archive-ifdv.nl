@@ -1,47 +1,77 @@
-# Astro Starter Kit: Minimal
+# ifdv.nl
 
-```sh
-npm create astro@latest -- --template minimal
+> Archief van de All This-website voor Impactfonds Duurzame Voedselketen Rotterdam (IFDV): eenpagina-site over impactleningen in de Rotterdamse duurzame voedselketen.
+
+| | |
+|---|---|
+| **Klant** | Impactfonds Duurzame Voedselketen Rotterdam / Impact First Group |
+| **Bedrijf** | All This |
+| **Status** | Archief · niet meer live (okt 2026), noindex |
+| **SLA** | Nee |
+| **Live** | Was `https://ifdv.nl` (domein wijst nu elders). Archief: [impactfontsdvr.netlify.app](https://impactfontsdvr.netlify.app) |
+| **Netlify** | team All This, site `impactfontsdvr` → [impactfontsdvr.netlify.app](https://impactfontsdvr.netlify.app). Geen custom domain meer gekoppeld |
+| **CMS** | geen (content in `src/data/*.mdx`) |
+| **Repo** | [github.com/astrobuildclub/impact-fonds](https://github.com/astrobuildclub/impact-fonds) |
+| **Notion** | TODO |
+
+## Stack
+
+- Astro 5 · Node 22 (`.nvmrc`) · static
+- Styling: Tailwind 3 · Fonts: Adobe Fonts / Typekit (`tmw4ewt`)
+- Animatie: Motion (SVG-lijn / secties)
+- Consent: geen · Hosting: Netlify
+
+## Lokaal starten
+
+```bash
+nvm use
+npm install
+npm run dev            # http://localhost:4321
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+Overige scripts: `npm run build`, `npm run preview`, `npm run astro …`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Controle oktober 2026, Node 22: `npm install` en `npm run build` slagen.
 
-## 🚀 Project Structure
+### Environment-variabelen
 
-Inside of your Astro project, you'll see the following folders and files:
+Geen. Er is geen `.env.example`.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+## Structuur
+
+```
+public/         Favicon, share-image, assets
+src/
+  components/   Hero, Footer, Drawing, Partners, …
+  data/         MDX-secties (intro, invest, team, …)
+  js/           Observatie- en SVG-animatie
+  layout/       default.astro (SEO via astro-seo)
+  pages/        index.astro
+  styles/       global.css
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Content en CMS
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Geen CMS. Copy en tabellen staan in MDX onder `src/data/` en worden via componenten op de homepage geladen.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Privacy, toegankelijkheid en SEO
 
-## 🧞 Commands
+- Consent: geen tracking ingericht
+- WCAG: semantische opzet, geen formele 2.2 AA-audit
+- Archief: `X-Robots-Tag: noindex, nofollow` in `netlify.toml`; meta robots `noindex, nofollow` in de layout. Geen `Disallow` in robots.txt (bestaat niet). Sitemap-verwijzing: n.v.t.
 
-All commands are run from the root of the project, from a terminal:
+## Deploy
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- `main` → productie op Netlify (`impactfontsdvr`) · pull requests → deploy preview
+- Werkwijze gold: branch → PR → preview → merge. Geen nieuwe features meer
 
-## 👀 Want to learn more?
+## Bekende issues en afspraken
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Gearchiveerd in oktober 2026. Geen nieuwe features.
+- `npm audit` meldt kwetsbaarheden. Niet opgelost.
+- Build waarschuwt dat browserslist-/baseline-data verouderd is. Niet opgelost.
+- Domein `ifdv.nl` wijst niet meer naar deze Netlify-site.
+
+---
+
+Eigenaar: All This · Wat er gedaan is: zie [`CHANGELOG.md`](CHANGELOG.md) · Werkafspraken voor ontwikkelaars en AI-agents: [`AGENTS.md`](AGENTS.md)
