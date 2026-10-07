@@ -11,7 +11,7 @@
 | **Live** | Was `https://ifdv.nl` (domein wijst nu elders). Archief: [impactfontsdvr.netlify.app](https://impactfontsdvr.netlify.app) |
 | **Netlify** | team All This, site `impactfontsdvr` → [impactfontsdvr.netlify.app](https://impactfontsdvr.netlify.app). Geen custom domain meer gekoppeld |
 | **CMS** | geen (content in `src/data/*.mdx`) |
-| **Repo** | [github.com/astrobuildclub/impact-fonds](https://github.com/astrobuildclub/impact-fonds) |
+| **Repo** | [github.com/astrobuildclub/archive-ifdv.nl](https://github.com/astrobuildclub/archive-ifdv.nl) |
 | **Notion** | TODO |
 
 ## Stack
